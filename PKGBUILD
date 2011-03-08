@@ -37,7 +37,9 @@ package() {
   cd "$srcdir/riak_search-$pkgver/rel/"
   cp -a riaksearch/* $pkgdir/opt/riak-search/
   chmod -R 755 $pkgdir/opt/riak-search/bin
-  sed -i -e 's/^RUNNER_USER=$/RUNNER_USER=riak/' $pkgdir/opt/riak-search/bin/*
+  sed -i -e 's/^RUNNER_USER=$/RUNNER_USER=riak/' \
+         -e 's|^RUNNER_SCRIPT_DIR=.*$|RUNNER_SCRIPT_DIR=/opt/riak-search/bin|' \
+         $pkgdir/opt/riak-search/bin/*
 
   ln -s /opt/riak-search/log $pkgdir/var/log/riak-search
   ln -s /opt/riak-search/etc $pkgdir/etc/riak-search
