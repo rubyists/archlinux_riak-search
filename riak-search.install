@@ -7,7 +7,7 @@ pre_install() {
   id riak > /dev/null
   if [ $? -ne 0 ];then
     echo 'Adding user riak'
-    useradd -r riak -g riak
+    useradd -r riak -g riak -d /opt/riak-search
   fi
 }
 
@@ -18,7 +18,13 @@ post_install() {
 }
 
 post_upgrade() {
-  chown -R riak:riak /opt/riak-search
+  chown -R riak:riak /opt/riak-search/data
+  chown -R riak:riak /opt/riak-search/log
+  chown -R riak:riak /opt/riak-search/etc
+}
+
+pre_remove() {
+  /etc/rc.d/riak-search stop
 }
 
 post_remove() {

@@ -1,3 +1,0 @@
-#!/bin/sh
-me=$(basename $0)
-RUNNER_USER=riak /opt/riak-search/bin/$me $@
