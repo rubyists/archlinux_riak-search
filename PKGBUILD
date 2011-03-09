@@ -18,7 +18,9 @@ md5sums=('c784e42fbc306f84f799ebc780f20acb'
 
 build() {
   cd "$srcdir/riak_search-$pkgver"
-  source /etc/profile.d/jdk.sh /etc/profile.d/jre.sh /etc/profile.d/apache-ant.sh
+  source /etc/profile.d/jdk.sh 
+  source /etc/profile.d/jre.sh 
+  source /etc/profile.d/apache-ant.sh
   msg Cleaning
   make distclean
   # need to unset LDFLAGS because: ld: unrecognized option '-Wl,--hash-style=gnu'
