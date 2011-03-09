@@ -1,7 +1,7 @@
 # Maintainer: TJ Vanderpoel <tj@rubyists.com>
 pkgname=riak-search
 pkgver=0.14.0
-pkgrel=13
+pkgrel=14
 pkgdesc="A distributed, easily-scalable, failure-tolerant, real-time, full-text search engine built around Riak Core and tightly integrated with Riak KV."
 arch=(i686 x86_64)
 url="http://wiki.basho.com/Riak-Search.html"
